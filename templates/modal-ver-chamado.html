@@ -1,0 +1,97 @@
+{% extends 'index.html' %}
+{% block modal_ver_chamado %}
+<div>
+                                <div class="modal fade" role="dialog" tabindex="-1" id="myModal-3">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4>Dados do Chamado</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="card shadow mb-3">
+                                                    <div class="card-body">
+                                                        <form>
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <div class="mb-3"><label class="form-label"><strong>Título:</strong></label><input class="border rounded border-5 form-control d-xl-flex justify-content-xl-start" type="text" name="titulo" placeholder="Titulo do chamado" value="{{ chamados[idchamado].categoria }}" required="" disabled=""></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <div class="mb-3">
+                                                                        <div class="col">
+                                                                            <div class="mb-3"><label class="form-label"><strong>Descrição:</strong><br></label><textarea class="border rounded border-5 form-control" rows="4" name="descricao" placeholder="Descreva detalhadamente o motivo do chamado" required="" disabled="">{{ chamados[idchamado].descricao }}</textarea></div>
+                                                                        </div><label class="form-label"><strong>Local:</strong></label><select class="border rounded border-5 form-select" required="" disabled="">
+                                                                            <option value="1" {% if chamados[idchamado].local == "São Paulo - Sede 1" %} selected="selected" {% endif %}>São Paulo - Sede 1</option>
+                                                                            <option value="2" {% if chamados[idchamado].local == "Espírito Santo - Sede 2" %} selected="selected" {% endif %}>Espírito Santo - Sede 2</option>
+                                                                            <option value="3" {% if chamados[idchamado].local == "Minas Gerais - Sede 3" %} selected="selected" {% endif %}>Minas Gerais - Sede 3</option>
+                                                                        </select><label class="form-label" style="margin-top: 20px;"><strong>Prioridade:</strong></label><select class="border rounded border-5 form-select" required="" disabled="" style="padding-bottom: 2px;">
+                                                                            <option value="1" {% if chamados[idchamado].prioridade == "Alto" %} selected="selected" {% endif %}>Alto</option>
+                                                                            <option value="2" {% if chamados[idchamado].prioridade == "Médio" %} selected="selected" {% endif %}>Médio</option>
+                                                                            <option value="3" {% if chamados[idchamado].prioridade == "Baixo" %} selected="selected" {% endif %}>Baixo</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <div class="form-check form-switch"><input class="form-check-input" type="checkbox" id="formCheck-1" disabled=""><label class="form-check-label" for="formCheck-1"><strong>Receber notificações por E-mail</strong><br></label></div>
+                                                                    <div class="form-check form-switch"><input class="form-check-input" type="checkbox" id="formCheck-2" disabled=""><label class="form-check-label" for="formCheck-2" style="color: rgb(133, 135, 150);"><strong>Receber notificações por SMS</strong><br></label></div><input class="form-control" type="file" style="margin-bottom: 20px;margin-top: 20px;" disabled="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="btn-group" role="group"></div>
+                                                        </form>
+                                                        <div>
+                                                            <div class="modal fade" role="dialog" tabindex="-1" id="myModal-6">
+                                                                <div class="modal-dialog" role="document">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h4>Finalizar chamado</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <p class="text-center text-muted">Você tem certeza que deseja finalizar o chamado selecionado?</p>
+                                                                        </div>
+                                                                        <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Cancelar</button><a class="btn btn-primary" role="button" href="#" style="background: var(--bs-red);">Finalizar chamado</a></div>
+                                                                        <div class="modal fade" role="dialog" tabindex="-1" id="myModal-8">
+                                                                            <div class="modal-dialog" role="document">
+                                                                                <div class="modal-content">
+                                                                                    <div class="modal-header">
+                                                                                        <h4>Finalizar chamado</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                                    </div>
+                                                                                    <div class="modal-body">
+                                                                                        <p class="text-center text-muted">Você tem certeza que deseja finalizar o chamado selecionado?</p>
+                                                                                    </div>
+                                                                                    <div class="modal-footer"><button class="btn btn-light" type="button" href="{{url_for('index')}}">Cancelar</button><a class="btn btn-primary" role="button" href="#" style="background: var(--bs-red);">Finalizar chamado</a></div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <ul class="list-group" style="color: rgb(133,135,150);border-style: none;border-radius: 0px;">
+                                                    <li class="list-group-item">
+                                                        <div class="d-xl-flex justify-content-xl-start align-items-xl-center"><i class="far fa-user" style="color: rgb(133,135,150);"></i><span style="margin-left: 10px;font-weight: bold;color: rgb(133,135,150);">Gustavo Ribeiro</span></div>
+                                                        <div><span style="color: rgb(133,135,150);"><br><span style="color: rgb(0, 0, 0);">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rhoncus tellus eget ligula fringilla bibendum. Vestibulum iaculis turpis sed dignissim hendrerit.</span><br><br></span></div>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <div class="d-xl-flex justify-content-xl-end align-items-xl-center"><span style="margin-left: 10px;font-weight: bold;color: rgb(133,135,150);">Richard<i class="far fa-user" style="margin-bottom: 0px;margin-left: 10px;color: rgb(133,135,150);"></i></span></div>
+                                                        <div style="text-align: right;color: rgb(133,135,150);"><span style="text-align: right;color: rgb(133,135,150);"><br><span style="color: rgb(0, 0, 0);">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rhoncus tellus eget ligula fringilla bibendum. Vestibulum iaculis turpis sed dignissim hendrerit.</span><br><br></span></div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="modal-footer"><a class="btn btn-light" type="button" href="{{url_for('index')}}">Cancelar</a><a class="btn btn-primary" role="button" href="#myModal" style="background: var(--bs-red);border-style: none;" data-bs-target="#myModal" data-bs-toggle="modal">Finalizar chamado</a><a class="btn btn-primary" role="button" href="atualizar-chamado" style="background: var(--bs-green);border-style: none;">Atualizar chamado</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+{% endblock %}
+{% block script %}
+<script>
+      $(document).ready(function() {
+        $('#myModal-3').modal('show');
+      });
+</script>
+{% endblock %}

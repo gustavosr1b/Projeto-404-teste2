@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Dashboard - Brand</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/fontawesome5-overrides.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/accordion-faq-list.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Bootstrap-Chat.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/css/theme.bootstrap_4.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Ludens---1-Index-Table-with-Search--Sort-Filters-v20.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/some-message.css') }}">
+</head>
+
+<body id="page-top">
+    <div id="wrapper">
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+            <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#"><img class="img-fluid" src="{{ url_for('static', filename='img/logo.png') }}" width="192" height="99" style="padding-left: 33px;padding-right: 0px;margin-right: -1px;margin-bottom: 0px;padding-bottom: 0px;padding-top: 0px;margin-top: 13px;">
+                    <div class="sidebar-brand-icon rotate-n-15"></div>
+                    <div class="sidebar-brand-text mx-3"></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item"><a class="nav-link" href="{{url_for('admin')}}"><i class="fas fa-tachometer-alt"></i><span>Dashboard Admin</span></a><a class="nav-link active" href="{{url_for('index')}}"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{url_for('perfil')}}"><i class="fas fa-user"></i><span>Perfil</span></a></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"><a class="nav-link" href="{{url_for('login')}}"><i class="far fa-times-circle"></i><span>Sair</span></a></li>
+                    <li class="nav-item"></li>
+                </ul>
+                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+            </div>
+        </nav>
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+                    <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                        <ul class="navbar-nav flex-nowrap ms-auto">
+                            <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
+                                <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
+                                    <form class="me-auto navbar-search w-100">
+                                        <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
+                                            <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown no-arrow mx-1">
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="badge bg-danger badge-counter">3</span><i class="fas fa-bell fa-fw"></i></a>
+                                    <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
+                                        <h6 class="dropdown-header">Notificações</h6><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="me-3">
+                                                <div class="bg-primary icon-circle"><i class="fas fa-file-alt text-white"></i></div>
+                                            </div>
+                                            <div><span class="small text-gray-500">12 de Setembro, 2022</span>
+                                                <p>O chamado #156 foi respondido.</p>
+                                            </div>
+                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="me-3">
+                                                <div class="bg-success icon-circle"><i class="fas fa-donate text-white"></i></div>
+                                            </div>
+                                            <div><span class="small text-gray-500"><br><span style="background-color: rgb(255, 255, 255);">02 de Setembro, 2022</span><br></span>
+                                                <p>O que achou do seu atendimento?</p>
+                                            </div>
+                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div class="me-3">
+                                                <div class="bg-warning icon-circle"><i class="fas fa-exclamation-triangle text-white"></i></div>
+                                            </div>
+                                            <div><span class="small text-gray-500"><br><span style="background-color: rgb(255, 255, 255);">07 de Outubro, 2022</span><br></span>
+                                                <p>Atenção, precisamos de uma resposta no seu chamado</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown no-arrow mx-1">
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="badge bg-danger badge-counter">1</span><i class="fas fa-envelope fa-fw"></i></a>
+                                    <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
+                                        <h6 class="dropdown-header">notificações via e-mail</h6><a class="dropdown-item d-flex align-items-center" href="#">
+
+                                            <div class="dropdown-list-image me-3"><img class="rounded-circle" src="{{ url_for('static', filename='img/avatars/avatar4.jpeg') }}">
+                                                <div class="bg-success status-indicator"></div>
+                                            </div>
+                                            <div class="fw-bold">
+                                                <div class="text-truncate"><span>Atendimento #156</span></div>
+                                                <p class="small text-gray-500 mb-0">Richard - 58m</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="shadow dropdown-list dropdown-menu dropdown-menu-end" aria-labelledby="alertsDropdown"></div>
+                            </li>
+                            <div class="d-none d-sm-block topbar-divider"></div>
+                            <li class="nav-item dropdown no-arrow">
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="d-none d-lg-inline me-2 text-gray-600 small">Gustavo Ribeiro</span></a>
+                                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item" href="perfil"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a>
+                                        <div class="dropdown-divider"></div><a class="dropdown-item" href="/"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="container-fluid">
+                    <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                        <h3 class="text-dark mb-0">Dashboard</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-start-info py-2" style="padding-bottom: 0px;height: 100;">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col me-2">
+                                            <div class="text-uppercase text-info fw-bold text-xs mb-1"><span style="font-size: 8.5px;">CHAMADOS SOLUCIONADOS</span></div>
+                                            <div class="row g-0 align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="text-dark fw-bold h5 mb-0 me-3"><span>50%</span></div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="progress progress-sm">
+                                                        <div class="progress-bar bg-info" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"><span class="visually-hidden">50%</span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-clipboard-list fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-start-info py-2" style="padding-bottom: 0px;height: 100;">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col me-2">
+                                            <div class="text-uppercase text-info fw-bold text-xs mb-1"><span style="font-size: 8.5px;">CHAMADOS PENDENTES</span></div>
+                                            <div class="row g-0 align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="text-dark fw-bold h5 mb-0 me-3"><span>50%</span></div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="progress progress-sm">
+                                                        <div class="progress-bar bg-info" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"><span class="visually-hidden">50%</span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-clipboard-list fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4"></div>
+                        <div class="col-md-6 col-xl-3 mb-4"></div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-md-6"></div>
+                        <div class="col-12 col-sm-6 col-md-6 text-end" style="margin-bottom: 30px;"><a class="btn btn-primary" role="button" href="{{url_for('abrirchamado')}}"><i class="fa fa-plus"></i>&nbsp;CRIAR CHAMADO</a></div>
+                    </div>
+                    <div class="card" id="TableSorterCard">
+                        <div class="card-body" style="margin-right: 0px;margin-left: 0px;">
+                            <div>
+                                <div class="modal fade" role="dialog" tabindex="-1" id="myModal">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4>Finalizar chamado</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p class="text-center text-muted">Você tem certeza que deseja finalizar o chamado selecionado?</p>
+                                            </div>
+                                            <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Cancelar</button><a class="btn btn-primary" role="button" href="#" style="background: var(--bs-red);">Finalizar chamado</a></div>
+                                            <div class="modal fade" role="dialog" tabindex="-1" id="myModal-5">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h4>Finalizar chamado</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p class="text-center text-muted">Você tem certeza que deseja finalizar o chamado selecionado?</p>
+                                                        </div>
+                                                        <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Cancelar</button><a class="btn btn-primary" role="button" href="#" style="background: var(--bs-red);">Finalizar chamado</a></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% block modal_ver_chamado %}{% endblock %}
+                            {% block modal_excluir_chamado %}{% endblock %}
+                            <div class="row">
+                                <div class="col-md-6 text-nowrap">
+                                    <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable"><label class="form-label">Show&nbsp;<select class="d-inline-block form-select form-select-sm">
+                                                <option value="10" selected="">10</option>
+                                                <option value="25">25</option>
+                                                <option value="50">50</option>
+                                                <option value="100">100</option>
+                                            </select>&nbsp;</label></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="text-md-end dataTables_filter" id="dataTable_filter"><label class="form-label"><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Pesquisar chamado"></label></div>
+                                </div>
+                            </div>
+                            <div class="table-responsive table mt-2" id="dataTable-1" role="grid" aria-describedby="dataTable_info">
+                                <table class="table my-0" id="dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: auto;">Nº do chamado</th>
+                                            <th style="width: auto;">Data</th>
+                                            <th style="width: auto;">Título</th>
+                                            <th style="width: auto;">Local</th>
+                                            <th style="width: auto;">Status</th>
+                                            <th style="width: auto;">Ações</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for itens in chamados %}
+                                        <tr>
+                                            <td>{{itens.id}}</td>
+                                            <td>{{itens.data}}</td>
+                                            <td>{{itens.categoria}}</td>
+                                            <td>{{itens.local}}</td>
+                                            <td>{{itens.status}}</td>
+                                            <td>
+                                                <div class="btn-group" role="group"><a class="btn btn-primary btn-lg" role="button" style="width: 54px;border-top-left-radius: 8px;border-bottom-left-radius: 8px;background: var(--bs-success);border-color: var(--bs-table-bg);padding-top: 8px;padding-right: 16px;padding-bottom: 8px;padding-left: 16px;" href="{{ url_for('ver_chamado', idchamado=itens.id )}}"><i class="far fa-eye" style="width: 20px;height: 20px;font-size: 20px;"></i></a><a class="btn btn-primary btn-lg" role="button" href="{{ url_for('excluir_chamado', idchamado=itens.id )}}" style="background: var(--bs-red);border-color: var(--bs-table-bg);margin: 0px;"><i class="far fa-times-circle text-center"></i></a></div>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                        <tr></tr>
+                                        <tr></tr>
+                                        <tr></tr>
+                                        <tr></tr>
+                                        <tr></tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr></tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 align-self-center">
+                                    <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Mostrando de 1 a {{chamados|length}} de {{chamados|length}} chamados</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+                                        <ul class="pagination">
+                                            <li class="page-item disabled"><a class="page-link" aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
+                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="bg-white sticky-footer">
+                <div class="container my-auto">
+                    <div class="text-center my-auto copyright"><span>Copyright © GoTech S/A 2022</span></div>
+                </div>
+            </footer>
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/bs-init.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/js/jquery.tablesorter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/js/widgets/widget-filter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/js/widgets/widget-storage.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="{{ url_for('static', filename='js/Ludens---1-Index-Table-with-Search--Sort-Filters-v20-1.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/Ludens---1-Index-Table-with-Search--Sort-Filters-v20.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+
+
+    {% block script %}{% endblock %}
+    {% block script_excluir_chamado %}{% endblock %}
+</body>
+
+</html>

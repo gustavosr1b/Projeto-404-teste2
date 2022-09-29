@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Login - Brand</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/fontawesome5-overrides.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/accordion-faq-list.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Bootstrap-Chat.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/css/theme.bootstrap_4.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Ludens---1-Index-Table-with-Search--Sort-Filters-v20.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/some-message.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-gradient-primary">
+    <div class="container d-flex d-sm-flex justify-content-center align-items-center justify-content-sm-center align-items-sm-center">
+        <div class="row justify-content-center align-items-center align-items-lg-center" style="width: 937px;">
+            <div class="col-auto col-md-9 col-lg-8 col-xl-10 d-flex d-xl-flex flex-column justify-content-center align-items-center justify-content-xl-center" style="width: 100%;position: static;display: block;margin-right: 30px;margin-left: 30px;;">
+                <div class="card shadow-lg align-items-center o-hidden border-0 my-5" style="min-width: 50%;max-width: 100%;">
+                    <div class="card-body p-0">
+                        <div class="row d-flex flex-column justify-content-center align-items-center" style="padding-right: 28px;padding-left: 28px;">
+                            <div class="col-lg-12 col-xl-12 col-xxl-11 d-flex d-lg-flex justify-content-center align-items-center align-items-lg-center">
+                                <div class="text-start justify-content-center p-5" style="width: 437px;">
+                                    <div class="text-center">
+                                        <h4 class="text-dark mb-4">GoTech S/A</h4>
+                                    </div>
+                                    <form class="user">
+                                        <div class="mb-3"><input class="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Insira seu usuário" name="Usuario" style="min-width: auto;"></div>
+                                        <div class="d-flex flex-column align-items-end justify-content-xl-center align-items-xl-end mb-3" style="display: flex;position: relative;width: 100%;">
+                                            <i class="form__icon form__icon--hide fa-solid fa-eye-slash" style="position: absolute;font-size: 1.2rem;top: 1.1rem;right: 1.2rem;z-index: 9;"></i>
+                                            <input class="form-control form-control-user form__input--pass" type="password" id="exampleInputPassword" placeholder="Senha" name="Senha" required="">
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="custom-control custom-checkbox small">
+                                                <div class="form-check"><input class="form-check-input custom-control-input" type="checkbox" id="formCheck-1"><label class="form-check-label custom-control-label" for="formCheck-1">Lembrar</label></div>
+                                            </div>
+                                        </div><button class="btn btn-primary d-block btn-user w-100" type="submit">Login</button>
+                                        <hr>
+                                    </form>
+                                    <div class="text-center"><a class="small" href="#myModal" style="text-align: justify;" data-bs-toggle="modal">Esqueceu sua senha? Clique aqui para redefinir</a></div>
+                                    <div>
+                                        <div class="modal fade" role="dialog" tabindex="-1" id="myModal">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4>Esqueceu sua senha?</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p class="text-center text-muted" style="margin-right: 30px;margin-left: 30px;">Entre em contato no e-mail <a href="mailto:infra@gotech.com.br">infra@gotech.com.br</a> para redefinição de senha.</p>
+                                                    </div>
+                                                    <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Fechar</button></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/bs-init.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/js/jquery.tablesorter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/js/widgets/widget-filter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/js/widgets/widget-storage.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="{{ url_for('static', filename='js/Ludens---1-Index-Table-with-Search--Sort-Filters-v20-1.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/Ludens---1-Index-Table-with-Search--Sort-Filters-v20.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+
+    <script>
+        const hideIcon = document.querySelector('.form__icon--hide');
+        const passField = document.querySelector('.form__input--pass');
+
+        hideIcon.addEventListener('click', () => {
+          hideIcon.classList.toggle('fa-eye-slash');
+          hideIcon.classList.toggle('fa-eye');
+
+          if(hideIcon.classList.contains('fa-eye')){
+            passField.type = 'text';
+          }else{
+            passField.type = 'password';
+          }
+        });
+      </script>
+</body>
+
+</html>

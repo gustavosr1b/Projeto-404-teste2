@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% block modal_excluir_chamado %}
+
+<div class="modal fade" role="dialog" tabindex="-1" id="myModal-7">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4>Finalizar chamado</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+    <div class="modal-body">
+      <p class="text-center text-muted">Você tem certeza que deseja finalizar o chamado selecionado?</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-light" type="button" href="{{url_for('index')}}">Cancelar</button>
+      <a class="btn btn-primary" role="button"  href="{{ url_for('excluir_chamado_confirmar', idchamado=idchamado )}}" style="background: var(--bs-red);">Finalizar chamado 222</a>
+    </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+{% block script_excluir_chamado %}
+<script>
+      $(document).ready(function() {
+        $('#myModal-7').modal('show');
+      });
+</script>
+{% endblock %}
